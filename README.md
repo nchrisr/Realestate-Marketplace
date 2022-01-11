@@ -55,6 +55,36 @@ ganache-cli
 truffle test
 ````
 
+### **Minting the tokens**
+1. Start Zokrates in Docker and generate a unique proof.json
+```bash
+zokrates compute-witness -a a b
+# a and b are arguments for the proof function
+
+zokrates generate-proof
+# This generates the proof.json. You need to provide this in order to mintTokens
+```
+
+2. Start truffle console on the rinkeby network
+```bash
+truffle console --network rinkeby
+```
+
+3. Migrate the contracts **(IF YOU HAVE NOT DONE THIS ALREADY)**
+```bash
+> migrate
+```
+
+4. Get contract and proof an execute the mint command
+```bash
+> let tokenProof = require("../path/to/proof.json")
+> let contract = await SolnSquareVerifier.deployed()
+> contract.mintToken("address to mint to" , tokenIdNumber, tokenProof.proof.a, tokenProof.proof.b, tokenProof.proof.c, tokenProof.inputs)
+
+```
+
+
+
 # Project Resources
 
 * [Remix - Solidity IDE](https://remix.ethereum.org/)
@@ -65,3 +95,4 @@ truffle test
 * [Interactive zero knowledge 3-colorability demonstration](http://web.mit.edu/~ezyang/Public/graph/svg.html)
 * [Docker](https://docs.docker.com/install/)
 * [ZoKrates](https://github.com/Zokrates/ZoKrates)
+* [Helpful video](https://www.youtube.com/watch?v=axdymRYSHTs)
