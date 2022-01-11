@@ -3,6 +3,10 @@ This project involves using ERC721 non-fungible tokens (NFT) to represent Real E
 Zero knowledge proofs (zk-snarks) are used to ensure that only an owner is able to mint tokens for a Real Estate asset.
 Assets are listed on [OpenSea marketplace testnet](https://testnets.opensea.io/) on the Rinkeby network.
 
+## Contract ABI:
+- To generate the contract abi run `truffle compile`
+- The contract ABI can be found in ***eth-contracts/build/contracts/SolnSquareVerifier.json***
+
 ## Contract Address:
 - 0x7f734b5a215cdb6fa76a176816820a9480fb212f
 - View history on etherscan: https://rinkeby.etherscan.io/address/0x7f734b5a215cdb6fa76a176816820a9480fb212f

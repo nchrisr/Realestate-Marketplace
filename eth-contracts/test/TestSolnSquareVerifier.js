@@ -4,7 +4,7 @@
 
 let Verifier = artifacts.require('Verifier');
 let SolnSquareVerifier = artifacts.require('SolnSquareVerifier');
-let proof = require('../../zokrates/code/square/proof.json');
+let proof = require('../../proofs/proof-1.json');
 
 // Test if a new solution can be added for contract - SolnSquareVerifier
 
